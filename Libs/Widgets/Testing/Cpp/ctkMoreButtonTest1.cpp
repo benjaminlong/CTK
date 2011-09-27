@@ -27,19 +27,19 @@
 #include <QWidget>
 
 // CTK includes
-#include "ctkButton.h"
+#include "ctkMoreButton.h"
 
 // STD includes
 
 //-----------------------------------------------------------------------------
-int ctkButtonTest1(int argc, char* argv[])
+int ctkMoreButtonTest1(int argc, char* argv[])
 {
   QApplication app(argc, argv);
 
   QWidget widget(0);
   widget.show();
   QHBoxLayout* layout = new QHBoxLayout(&widget);
-  ctkButton* button = new ctkButton(&widget);
+  ctkMoreButton* button = new ctkMoreButton(&widget);
   layout->addWidget(button);
 
   if (argc < 2 || QString(argv[1]) != "-I" )
