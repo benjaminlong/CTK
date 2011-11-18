@@ -45,13 +45,13 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkPathLineEdit* widget = reinterpret_cast<ctkPathLineEdit*>(data);
-
+  Q_UNUSED(widget);
   }
 //-----------------------------------------------------------------------------
 void checkFinalWidgetState2(void* data)
   {
   ctkPathLineEdit* widget = reinterpret_cast<ctkPathLineEdit*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

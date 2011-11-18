@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<events>
-    <geometry widget="MainWindow" command="mainWindowGeometry" arguments="01d9d0cb000100000000000000000031000001f90000019a000000060000004a000001f300000194000000000000"/>
-    <state widget="MainWindow" command="mainWindowState" arguments=""/>
-</events>

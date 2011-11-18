@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkVTKThresholdWidget* widget = reinterpret_cast<ctkVTKThresholdWidget*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

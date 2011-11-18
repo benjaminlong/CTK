@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkToolTipTrapper* widget = reinterpret_cast<ctkToolTipTrapper*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

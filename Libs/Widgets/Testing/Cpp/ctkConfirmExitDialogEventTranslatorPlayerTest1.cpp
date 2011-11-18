@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkConfirmExitDialog* widget = reinterpret_cast<ctkConfirmExitDialog*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

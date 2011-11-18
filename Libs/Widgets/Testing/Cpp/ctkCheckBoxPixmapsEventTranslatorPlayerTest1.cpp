@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkCheckBoxPixmaps* widget = reinterpret_cast<ctkCheckBoxPixmaps*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

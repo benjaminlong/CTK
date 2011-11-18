@@ -44,7 +44,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkFileDialog* widget = reinterpret_cast<ctkFileDialog*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkVTKSliceView* widget = reinterpret_cast<ctkVTKSliceView*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

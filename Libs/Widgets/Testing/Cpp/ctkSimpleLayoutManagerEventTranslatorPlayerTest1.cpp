@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkSimpleLayoutManager* widget = reinterpret_cast<ctkSimpleLayoutManager*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

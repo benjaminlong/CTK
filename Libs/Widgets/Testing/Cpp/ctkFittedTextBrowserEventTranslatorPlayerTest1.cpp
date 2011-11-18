@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkFittedTextBrowser* widget = reinterpret_cast<ctkFittedTextBrowser*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

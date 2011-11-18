@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkIconEnginePlugin* widget = reinterpret_cast<ctkIconEnginePlugin*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

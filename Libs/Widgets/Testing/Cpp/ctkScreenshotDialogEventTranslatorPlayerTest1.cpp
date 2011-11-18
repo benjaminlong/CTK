@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkScreenshotDialog* widget = reinterpret_cast<ctkScreenshotDialog*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

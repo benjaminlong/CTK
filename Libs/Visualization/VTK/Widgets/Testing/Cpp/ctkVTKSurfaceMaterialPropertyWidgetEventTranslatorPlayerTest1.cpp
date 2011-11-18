@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkVTKSurfaceMaterialPropertyWidget* widget = reinterpret_cast<ctkVTKSurfaceMaterialPropertyWidget*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

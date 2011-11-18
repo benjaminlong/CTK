@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkVTKScalarsToColorsView* widget = reinterpret_cast<ctkVTKScalarsToColorsView*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

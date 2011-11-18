@@ -46,13 +46,13 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkVTKMagnifyView* widget = reinterpret_cast<ctkVTKMagnifyView*>(data);
-
+  Q_UNUSED(widget);
   }
 //-----------------------------------------------------------------------------
 void checkFinalWidgetState2(void* data)
   {
   ctkVTKMagnifyView* widget = reinterpret_cast<ctkVTKMagnifyView*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

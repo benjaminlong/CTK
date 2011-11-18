@@ -35,9 +35,9 @@ ctkVTKRenderViewEventTranslator::ctkVTKRenderViewEventTranslator(const QByteArra
     mClassType(Classname),
     lastMoveEvent(QEvent::MouseButtonPress, QPoint(), Qt::MouseButton(),
                                              Qt::MouseButtons(), Qt::KeyboardModifiers()),
-    lastMouseEvent(QEvent::MouseButtonRelease, QPoint(), Qt::MouseButton(),
-                                             Qt::MouseButtons(), Qt::KeyboardModifiers()),
     oldMoveEvent(QEvent::MouseMove, QPoint(), Qt::MouseButton(),
+                                             Qt::MouseButtons(), Qt::KeyboardModifiers()),
+    lastMouseEvent(QEvent::MouseButtonRelease, QPoint(), Qt::MouseButton(),
                                              Qt::MouseButtons(), Qt::KeyboardModifiers())
 {
 }
@@ -140,8 +140,6 @@ bool ctkVTKRenderViewEventTranslator::translateEvent(QObject *Object,
             lastMoveEvent = e;
 
             QSize size = widget->size();
-            double d = sqrt(pow((mouseEvent->x()-oldMoveEvent.x())/static_cast<double>(size.width()),2.0) +
-                            pow((mouseEvent->y()-oldMoveEvent.y())/static_cast<double>(size.height()),2.0));
 
             if(lastMouseEvent.type() == QEvent::MouseButtonPress )
               {
@@ -232,11 +230,11 @@ bool ctkVTKRenderViewEventTranslator::translateEvent(QObject *Object,
       {
       QKeyEvent* ke = static_cast<QKeyEvent*>(Event);
       QString data =QString("%1:%2:%3:%4:%5:%6")
-        .arg(ke->type())
+        .arg(static_cast<int>(ke->type()))
         .arg(ke->key())
         .arg(static_cast<int>(ke->modifiers()))
         .arg(ke->text())
-        .arg(ke->isAutoRepeat())
+        .arg(static_cast<int>(ke->isAutoRepeat()))
         .arg(ke->count());
       emit recordEvent(Object, "keyEvent", data);
       }

@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkSignalMapper* widget = reinterpret_cast<ctkSignalMapper*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkVTKThumbnailView* widget = reinterpret_cast<ctkVTKThumbnailView*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

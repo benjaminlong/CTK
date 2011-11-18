@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkVTKVolumePropertyWidget* widget = reinterpret_cast<ctkVTKVolumePropertyWidget*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

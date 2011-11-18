@@ -41,16 +41,12 @@ void checkFinalWidgetState(void* data)
   ctkDoubleSlider* widget = reinterpret_cast<ctkDoubleSlider*>(data);
 
   CTKCOMPARE(widget->value(), 60.00);
-
-  //QApplication::exit(EXIT_SUCCESS);
   }
 void checkFinalWidgetState3(void* data)
   {
   ctkDoubleSlider* widget = reinterpret_cast<ctkDoubleSlider*>(data);
 
   CTKCOMPARE(widget->value(), -27.82);
-
-  //QApplication::exit(EXIT_SUCCESS);
   }
 }
 

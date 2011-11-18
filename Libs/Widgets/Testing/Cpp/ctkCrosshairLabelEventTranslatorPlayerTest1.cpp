@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkCrosshairLabelDDDD* widget = reinterpret_cast<ctkCrosshairLabelDDDD*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

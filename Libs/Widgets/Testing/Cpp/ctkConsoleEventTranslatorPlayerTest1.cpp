@@ -42,8 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkConsole* widget = reinterpret_cast<ctkConsole*>(data);
-
-//  CTKCOMPARE(widget->,2);
+  Q_UNUSED(widget);
   }
 }
 

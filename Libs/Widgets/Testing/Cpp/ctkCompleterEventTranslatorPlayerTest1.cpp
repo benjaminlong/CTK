@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkCompleter* widget = reinterpret_cast<ctkCompleter*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

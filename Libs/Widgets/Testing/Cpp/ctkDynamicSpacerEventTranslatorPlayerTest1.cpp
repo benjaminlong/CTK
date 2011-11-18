@@ -42,8 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkDynamicSpacer* widget = reinterpret_cast<ctkDynamicSpacer*>(data);
-
-//  CTKCOMPARE(widget->directory(), QString("/home/benjaminlong"));
+  Q_UNUSED(widget);
   }
 }
 

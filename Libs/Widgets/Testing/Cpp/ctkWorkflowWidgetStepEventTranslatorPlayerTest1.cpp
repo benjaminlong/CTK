@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkWorkflowWidgetStep* widget = reinterpret_cast<ctkWorkflowWidgetStep*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

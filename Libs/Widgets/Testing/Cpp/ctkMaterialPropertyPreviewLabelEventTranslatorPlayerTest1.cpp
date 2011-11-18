@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkMaterialPropertyPreviewLabel* widget = reinterpret_cast<ctkMaterialPropertyPreviewLabel*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

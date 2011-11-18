@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkVTKAbstractView* widget = reinterpret_cast<ctkVTKAbstractView*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

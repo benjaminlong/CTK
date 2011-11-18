@@ -46,7 +46,6 @@ void checkFinalWidgetState(void* data)
 
   CTKCOMPARE(widget->startDateTime(), QDateTime(QDate(2005, 11, 22)));
   CTKCOMPARE(widget->endDateTime(), QDateTime(QDate(2010, 11, 22)));
-//  CTKCOMPARE(widget->minimumValue(), 21.00);
   }
 }
 

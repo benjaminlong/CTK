@@ -42,7 +42,7 @@ namespace
 void checkFinalWidgetState(void* data)
   {
   ctkQImageView* widget = reinterpret_cast<ctkQImageView*>(data);
-
+  Q_UNUSED(widget);
   }
 }
 

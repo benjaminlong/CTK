@@ -43,6 +43,7 @@ void checkFinalWidgetState(void* data)
   {
   ctkBasePopupWidget* widget = reinterpret_cast<ctkBasePopupWidget*>(data);
 
+  Q_UNUSED(widget);
   }
 }
 
