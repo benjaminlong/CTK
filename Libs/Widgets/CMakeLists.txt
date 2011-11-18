@@ -319,23 +319,14 @@ IF(CTK_USE_QTTESTING)
     ctkTreeComboBoxEventTranslator.h
     )
   LIST(APPEND KIT_MOC_SRCS
-    ctkAxesWidgetEventPlayer.h
     ctkAxesWidgetEventTranslator.h
-    ctkCheckableComboBoxEventPlayer.h
     ctkCheckableComboBoxEventTranslator.h
-    ctkCheckableHeaderViewEventPlayer.h
     ctkCheckableHeaderViewEventTranslator.h
-    ctkDoubleRangeSliderEventPlayer.h
     ctkDoubleRangeSliderEventTranslator.h
-    ctkMatrixWidgetEventPlayer.h
     ctkMatrixWidgetEventTranslator.h
-    ctkMenuComboBoxEventPlayer.h
     ctkMenuComboBoxEventTranslator.h
-    ctkPathLineEditEventPlayer.h
     ctkPathLineEditEventTranslator.h
-    ctkRangeSliderEventPlayer.h
     ctkRangeSliderEventTranslator.h
-    ctkTreeComboBoxEventPlayer.h
     ctkTreeComboBoxEventTranslator.h
     )
   LIST(APPEND KIT_target_libraries QtTesting)
