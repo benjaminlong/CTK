@@ -399,14 +399,12 @@ bool ctkEventTranslatorPlayerWidget::compare(const QImage& actual,
         }
       if (actPix != expPix)
         {
-        totaldiff += (qAbs(qRed(actPix) - qRed(expPix)) +
-                      qAbs(qGreen(actPix) - qGreen(expPix)) +
-                      qAbs(qBlue(actPix) - qBlue(expPix))) / 255.0;
+        totaldiff ++;
         }
       }
     }
-  totaldiff = (totaldiff * 100)  / (a.width() * a.height() * 3);
-  if (totaldiff >= 0.1)
+  totaldiff = (totaldiff * 100)  / (a.width() * a.height());
+  if (totaldiff >= 0.01)
     {
     QTextStream(stderr, QIODevice::WriteOnly)
         << "Line " << line << " - The 2 Images have "

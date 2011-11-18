@@ -56,9 +56,9 @@ bool ctkVTKRenderViewEventPlayer::playEvent(QObject* Object,
         v = mouseRegExp.cap(2);
         int h = v.toInt();
         v = mouseRegExp.cap(3);
-        int app_w = v.toInt();
+//        int app_w = v.toInt();
         v = mouseRegExp.cap(4);
-        int app_h = v.toInt();
+//        int app_h = v.toInt();
         v = mouseRegExp.cap(5);
         bool rescale = v.toBool();
 
@@ -94,24 +94,27 @@ bool ctkVTKRenderViewEventPlayer::playEvent(QObject* Object,
       QRegExp mouseRegExp("\\(([^,]*),([^,]*),([^,]),([^,]),([^,]*)\\)");
       if (mouseRegExp.indexIn(Arguments)!= -1)
         {
-        QVariant v = mouseRegExp.cap(1);
         double x_center = widget->size().width() / 2.0;
         double y_center = widget->size().height() / 2.0;
-        double x = x_center*1000000 - (v.toDouble() * (widget->size().width()/2.0));
-        x = x/1000000;
-        x = static_cast<int>(x);
+
+        QVariant v = mouseRegExp.cap(1);
+        double x = x_center - (v.toDouble() * x_center);
+        x = static_cast<int>(x + 0.5);
+
         v = mouseRegExp.cap(2);
-        double y = y_center*1000000 - (v.toDouble() * (widget->size().height()/2.0));
-        y = y/1000000;
-        y = static_cast<int>(y);
+        double y = y_center - (v.toDouble() * y_center);
+        y = static_cast<int>(y + 0.5);
+
         v = mouseRegExp.cap(4);
         Qt::MouseButtons buttons = static_cast<Qt::MouseButton>(v.toInt());
+
         v = mouseRegExp.cap(5);
         Qt::KeyboardModifiers keym = static_cast<Qt::KeyboardModifier>(v.toInt());
+
         v = mouseRegExp.cap(3);
         if (Command == "mouseWheel")
           {
-           QEvent::Type type = QEvent::Wheel;
+//           QEvent::Type type = QEvent::Wheel;
            int delta = ( v.toInt() == 0 ) ? -1 : 1;
            QWheelEvent we(QPoint(x,y), delta, buttons, keym);
            QCoreApplication::sendEvent(Object, &we);
@@ -120,26 +123,6 @@ bool ctkVTKRenderViewEventPlayer::playEvent(QObject* Object,
         Qt::MouseButton button = static_cast<Qt::MouseButton>(v.toInt());
         QEvent::Type type = (Command == "mousePress")? QEvent::MouseButtonPress :
           ((Command=="mouseMove")?  QEvent::MouseMove : QEvent::MouseButtonRelease);
-//        if(type == QEvent::MouseMove)
-//          {
-//          v = mouseRegExp.cap(1);
-//          int x = static_cast<int>(v.toDouble() * widget->size().width());
-//          v = mouseRegExp.cap(2);
-//          int y = static_cast<int>(v.toDouble() * widget->size().height());
-//          }
-//        if(type == QEvent::MouseButtonRelease)
-//          {
-//          qDebug() << "player Release :: x2 : " << x << " y2 : " << y;
-//          }
-//        if(type == QEvent::MouseButtonPress)
-//          {
-//          qDebug() << "player Press :: x2 : " << x << " y2 : " << y;
-//          }
-//        if(type == QEvent::MouseMove)
-//          {
-//          qDebug() << "Move x =" << x << " y =" << y
-//                   << "     xn=" << mouseRegExp.cap(1).toDouble() << " Yn=" << mouseRegExp.cap(2).toDouble();
-//          }
         QMouseEvent e(type, QPoint(x,y), button, buttons, keym);
         QCoreApplication::sendEvent(Object, &e);
         }
