@@ -32,6 +32,7 @@ SET(external_projects
   ZMQ
   QtMobility
   QtSOAP
+  QtTesting
   OpenIGTLink
   XIP
   ITK
@@ -187,6 +188,7 @@ ENDFOREACH()
 SET(ctk_cmake_boolean_args
   BUILD_TESTING
   BUILD_QTDESIGNER_PLUGINS
+  CTK_USE_QTTESTING
   CTK_USE_KWSTYLE
   WITH_COVERAGE
   DOCUMENTATION_TARGET_IN_ALL

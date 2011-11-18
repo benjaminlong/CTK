@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<events>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0" command="set_boolean" arguments="true"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray1" command="mousePress" arguments="1,1,0,44,14"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray1" command="mouseRelease" arguments="1,0,0,44,14"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray1" command="mousePress" arguments="1,1,0,74,15"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray1" command="mouseRelease" arguments="1,0,0,74,15"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0" command="mouseMove" arguments="1,0,0,110,303"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0" command="mouseRelease" arguments="1,0,0,110,303"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QPushButton0" command="activate" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray1" command="mousePress" arguments="1,1,0,46,17"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray1" command="mouseMove" arguments="1,0,0,46,15"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray1" command="mouseRelease" arguments="1,0,0,46,15"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray0" command="mousePress" arguments="1,1,0,215,135"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray0" command="mouseRelease" arguments="1,0,0,215,135"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QPushButton0" command="activate" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray1" command="mousePress" arguments="1,1,0,11,11"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray1" command="mouseMove" arguments="1,0,0,14,11"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray1" command="mouseRelease" arguments="1,0,0,14,11"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray0" command="mousePress" arguments="1,1,0,210,128"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray0" command="mouseRelease" arguments="1,0,0,210,128"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QPushButton0" command="activate" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray0" command="mousePress" arguments="1,1,0,71,39"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QWellArray0" command="mouseRelease" arguments="1,0,0,71,39"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QColorShower0/1QSpinBox0" command="set_int" arguments="1"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QColorShower0/1QSpinBox0" command="set_int" arguments="10"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QColorShower0/1QSpinBox0" command="set_int" arguments="100"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QColorShower0/1QSpinBox3" command="set_int" arguments="50"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QColorShower0/1QSpinBox3" command="set_int" arguments="50"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QColorPicker0" command="mousePress" arguments="1,1,0,161,127"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QColorPicker0" command="mouseRelease" arguments="1,0,0,161,127"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkColorPickerButton0/1QColorDialog0/1QDialogButtonBox0/1QPushButton0" command="activate" arguments=""/>
+</events>

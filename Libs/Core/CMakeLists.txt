@@ -71,6 +71,8 @@ SET(KIT_SRCS
   ctkWorkflowStep.cpp
   ctkWorkflowStep_p.h
   ctkWorkflowTransitions.h
+  vvSetName.cpp
+  vvSetName.h
   )
 
 IF(HAVE_BFD)

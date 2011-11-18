@@ -1,5 +1,4 @@
 PROJECT(ctkPluginGenerator)
-
 #
 # See CTK/CMake/ctkMacroBuildApp.cmake for details
 #

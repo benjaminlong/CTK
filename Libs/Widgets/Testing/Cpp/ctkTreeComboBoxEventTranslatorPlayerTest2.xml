@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<events>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="showpopup" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="hidepopup" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="showpopup" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="1.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="expand" arguments="0.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="set_string" arguments="Test1"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.0.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.1.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.2.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.1.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.0.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.1.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.2.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="1.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="2.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="1.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="2.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="1.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="hidepopup" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="set_string" arguments="Test2"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="showpopup" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="2.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="1.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.2.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.1.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.0.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="hidepopup" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="set_string" arguments="Test1"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="showpopup" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.0.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.1.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="0.0.2.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0/1QComboBoxPrivateContainer0/1QTreeView0" command="setCurrent" arguments="1.0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="hidepopup" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QWidget0/1ctkTreeComboBox0" command="set_string" arguments="Test2"/>
+</events>

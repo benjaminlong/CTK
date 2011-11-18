@@ -84,6 +84,86 @@ IF(EXISTS "${CTKData_DIR}")
     )
 ENDIF()
 
+#
+# Test expecting CTK_USE_QTTESTING to be ON
+#
+IF(CTK_USE_QTTESTING)
+  LIST(APPEND TEST_SOURCES
+    ctkActionsWidgetEventTranslatorPlayerTest1.cpp
+    ctkAddRemoveComboBoxEventTranslatorPlayerTest1.cpp
+    ctkAxesWidgetEventTranslatorPlayerTest1.cpp
+#    ctkBasePopupWidgetEventTranslatorPlayerTest1.cpp
+    ctkButtonGroupEventTranslatorPlayerTest1.cpp
+    ctkCheckableComboBoxEventTranslatorPlayerTest1.cpp
+    ctkCheckableHeaderViewEventTranslatorPlayerTest1.cpp
+    ctkCheckablePushButtonEventTranslatorPlayerTest1.cpp
+    ctkCollapsibleButtonEventTranslatorPlayerTest1.cpp
+    ctkCollapsibleGroupBoxEventTranslatorPlayerTest1.cpp
+    ctkColorDialogEventTranslatorPlayerTest1.cpp
+    ctkColorPickerButtonEventTranslatorPlayerTest1.cpp
+    ctkComboBoxEventTranslatorPlayerTest1.cpp
+#    ctkCompleterEventTranslatorPlayerTest1.cpp
+#    ctkConfirmExitDialogEventTranslatorPlayerTest1.cpp
+    ctkConsoleEventTranslatorPlayerTest1.cpp
+    ctkCoordinatesWidgetEventTranslatorPlayerTest1.cpp
+#    ctkCrosshairLabelEventTranslatorPlayerTest1.cpp
+    ctkDateRangeWidgetEventTranslatorPlayerTest1.cpp
+    ctkDirectoryButtonEventTranslatorPlayerTest1.cpp
+    ctkDoubleRangeSliderEventTranslatorPlayerTest1.cpp
+    ctkDoubleSliderEventTranslatorPlayerTest1.cpp
+#    ctkDynamicSpacerEventTranslatorPlayerTest1.cpp
+#    ctkErrorLogStatusMessageHandlerEventTranslatorPlayerTest1.cpp
+#    ctkErrorLogWidgetEventTranslatorPlayerTest1.cpp
+    ctkExpandButtonEventTranslatorPlayerTest1.cpp
+    ctkFileDialogEventTranslatorPlayerTest1.cpp
+#    ctkFittedTextBrowserEventTranslatorPlayerTest1.cpp
+#    ctkFlowLayoutEventTranslatorPlayerTest1.cpp
+    ctkFontButtonEventTranslatorPlayerTest1.cpp
+#    ctkIconEnginePluginEventTranslatorPlayerTest1.cpp
+#    ctkLayoutManagerEventTranslatorPlayerTest1.cpp
+#    ctkMaterialPropertyPreviewLabelEventTranslatorPlayerTest1.cpp
+    ctkMaterialPropertyWidgetEventTranslatorPlayerTest1.cpp
+    ctkMatrixWidgetEventTranslatorPlayerTest1.cpp
+    ctkMenuButtonEventTranslatorPlayerTest1.cpp
+    ctkMenuComboBoxEventTranslatorPlayerTest1.cpp
+    ctkModalityWidgetEventTranslatorPlayerTest1.cpp
+    ctkPathLineEditEventTranslatorPlayerTest1.cpp
+#    ctkPixmapIconEngineEventTranslatorPlayerTest1.cpp
+    ctkPopupWidgetEventTranslatorPlayerTest1.cpp
+#    ctkQImageViewEventTranslatorPlayerTest1.cpp
+    ctkRangeSliderEventTranslatorPlayerTest1.cpp
+    ctkRangeWidgetEventTranslatorPlayerTest1.cpp
+    ctkScreenshotDialogEventTranslatorPlayerTest1.cpp
+    ctkSearchBoxEventTranslatorPlayerTest1.cpp
+    ctkSettingsDialogEventTranslatorPlayerTest1.cpp
+#    ctkSettingsEventTranslatorPlayerTest1.cpp
+    ctkSettingsPanelEventTranslatorPlayerTest1.cpp
+#    ctkSignalMapperEventTranslatorPlayerTest1.cpp
+#    ctkSimpleLayoutManagerEventTranslatorPlayerTest1.cpp
+    ctkSliderWidgetEventTranslatorPlayerTest1.cpp
+#    ctkTemplateWidgetEventTranslatorPlayerTest1.cpp
+#    ctkTestApplicationEventTranslatorPlayerTest1.cpp
+#    ctkThumbnailListWidgetEventTranslatorPlayerTest1.cpp
+#    ctkThumbnailWidgetEventTranslatorPlayerTest1.cpp
+#    ctkToolTipTrapperEventTranslatorPlayerTest1.cpp
+#    ctkTransferFunctionBarsItemEventTranslatorPlayerTest1.cpp
+#    ctkTransferFunctionControlPointsItemEventTranslatorPlayerTest1.cpp
+#    ctkTransferFunctionGradientItemEventTranslatorPlayerTest1.cpp
+#    ctkTransferFunctionItemEventTranslatorPlayerTest1.cpp
+#    ctkTransferFunctionNativeItemEventTranslatorPlayerTest1.cpp
+#    ctkTransferFunctionSceneEventTranslatorPlayerTest1.cpp
+#    ctkTransferFunctionViewEventTranslatorPlayerTest1.cpp
+    ctkTreeComboBoxEventTranslatorPlayerTest1.cpp
+#    ctkWorkflowAbstractPagedWidgetEventTranslatorPlayerTest1.cpp
+#    ctkWorkflowButtonBoxWidgetEventTranslatorPlayerTest1.cpp
+#    ctkWorkflowGroupBoxEventTranslatorPlayerTest1.cpp
+#    ctkWorkflowStackedWidgetEventTranslatorPlayerTest1.cpp
+#    ctkWorkflowTabWidgetEventTranslatorPlayerTest1.cpp
+#    ctkWorkflowWidgetEventTranslatorPlayerTest1.cpp
+#    ctkWorkflowWidgetStepEventTranslatorPlayerTest1.cpp
+    )
+ENDIF()
+
 CREATE_TEST_SOURCELIST(Tests ${KIT}CppTests.cxx
   ${TEST_SOURCES}
   )
@@ -111,8 +191,32 @@ SET(Tests_MOC_SRCS
 SET(Tests_MOC_CPP)
 QT4_WRAP_CPP(Tests_MOC_CPP ${Tests_MOC_SRCS})
 
+#
+SET(KIT_target_libraries ${LIBRARY_NAME})
+
+#
+# If CTK_USE_QTTESTING is ON
+#
+IF(CTK_USE_QTTESTING)
+  # Do not export symbol in ctkEventTranslatorPlayerWidget class
+  ADD_DEFINITIONS(-DNO_SYMBOL_EXPORT)
+
+  INCLUDE_DIRECTORIES(
+    ${CTK_SOURCE_DIR}/Libs/QtTesting
+    ${CTK_BINARY_DIR}/Libs/QtTesting
+    )
+
+  LIST(APPEND KIT_Target_libraries CTKQtTesting)
+
+  LIST(APPEND TEST_SOURCES
+    ${CTK_SOURCE_DIR}/Libs/QtTesting/ctkEventTranslatorPlayerWidget.h
+    ${CTK_SOURCE_DIR}/Libs/QtTesting/ctkEventTranslatorPlayerWidget.cpp
+    )
+ENDIF()
+
 ADD_EXECUTABLE(${KIT}CppTests ${Tests} ${Tests_SRCS} ${Tests_MOC_CPP})
-TARGET_LINK_LIBRARIES(${KIT}CppTests ${LIBRARY_NAME})
+TARGET_LINK_LIBRARIES(${KIT}CppTests ${KIT_Target_libraries})
+
 
 SET( KIT_TESTS ${CPP_TEST_PATH}/${KIT}CppTests)
 
@@ -200,6 +304,85 @@ SIMPLE_TEST( ctkWidgetsUtilsTest1 )
 SIMPLE_TEST( ctkWidgetsUtilsTestGrabWidget )
 SIMPLE_TEST( ctkWorkflowWidgetTest1 )
 SIMPLE_TEST( ctkWorkflowWidgetTest2 )
+
+#
+# Add Tests expecting CTK_USE_QTTESTING to be set
+#
+IF(CTK_USE_QTTESTING)
+  SIMPLE_TEST( ctkActionsWidgetEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkActionsWidgetEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkAddRemoveComboBoxEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkAxesWidgetEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkBasePopupWidgetEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkButtonGroupEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkCheckableComboBoxEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkCheckableHeaderViewEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkCheckablePushButtonEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkCollapsibleButtonEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkCollapsibleGroupBoxEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkColorDialogEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkColorPickerButtonEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkComboBoxEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkCompleterEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkConfirmExitDialogEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkConsoleEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkCoordinatesWidgetEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkCrosshairLabelEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkDateRangeWidgetEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkDirectoryButtonEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkDoubleRangeSliderEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkDoubleSliderEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkDynamicSpacerEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkErrorLogStatusMessageHandlerEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkErrorLogWidgetEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkExpandButtonEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkFileDialogEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkFittedTextBrowserEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkFlowLayoutEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkFontButtonEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkIconEnginePluginEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkLayoutManagerEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkMaterialPropertyPreviewLabelEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkMaterialPropertyWidgetEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkMatrixWidgetEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkMenuButtonEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkMenuComboBoxEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkModalityWidgetEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkPathLineEditEventTranslatorPlayerTest1 )
+#  SIMPLE_TEST( ctkPixmapIconEngineEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkPopupWidgetEventTranslatorPlayerTest1 )
+#  SIMPLE_TEST( ctkQImageViewEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkRangeSliderEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkRangeWidgetEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkScreenshotDialogEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkSearchBoxEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkSettingsDialogEventTranslatorPlayerTest1 )
+#  SIMPLE_TEST( ctkSettingsEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkSettingsPanelEventTranslatorPlayerTest1 )
+#  SIMPLE_TEST( ctkSignalMapperEventTranslatorPlayerTest1 )
+#  SIMPLE_TEST( ctkSimpleLayoutManagerEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkSliderWidgetEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkTemplateWidgetEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkTestApplicationEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkThumbnailListWidgetEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkThumbnailWidgetEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkToolTipTrapperEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkTransferFunctionBarsItemEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkTransferFunctionControlPointsItemEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkTransferFunctionGradientItemEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkTransferFunctionItemEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkTransferFunctionNativeItemEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkTransferFunctionSceneEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkTransferFunctionViewEventTranslatorPlayerTest1 )
+  SIMPLE_TEST( ctkTreeComboBoxEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkWorkflowAbstractPagedWidgetEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkWorkflowButtonBoxWidgetEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkWorkflowGroupBoxEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkWorkflowStackedWidgetEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkWorkflowTabWidgetEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkWorkflowWidgetEventTranslatorPlayerTest1 )
+# SIMPLE_TEST( ctkWorkflowWidgetStepEventTranslatorPlayerTest1 )
+ENDIF()
 
 #
 # Add Tests expecting CTKData to be set

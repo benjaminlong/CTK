@@ -59,6 +59,7 @@ public:
   ctkMenuComboBoxPrivate(ctkMenuComboBox& object);
   void init();
   QAction* actionByTitle(const QString& text, const QMenu* parentMenu);
+
   void setCurrentText(const QString& newCurrentText);
   QString currentText()const;
 

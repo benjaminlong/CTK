@@ -54,3 +54,10 @@ SET_PROPERTY(TEST ctkDICOMModelTest2 PROPERTY LABELS ${PROJECT_NAME})
 SIMPLE_TEST(ctkDICOMQueryRetrieveWidgetTest1)
 SIMPLE_TEST(ctkDICOMQueryResultsTabWidgetTest1)
 SIMPLE_TEST(ctkDICOMThumbnailListWidgetTest1)
+
+#
+# Add Tests expecting CTK_USE_QTTESTING to be set
+#
+IF(CTK_USE_QTTESTING)
+
+ENDIF()

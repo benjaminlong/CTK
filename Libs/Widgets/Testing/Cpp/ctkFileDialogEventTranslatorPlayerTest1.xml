@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<events>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1QPushButton0" command="activate" arguments=""/>
+</events>

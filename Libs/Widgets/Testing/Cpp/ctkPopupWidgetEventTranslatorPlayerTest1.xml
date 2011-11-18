@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<events>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/topLevelWidget/1ctkCollapsibleButton0/focusComboBox/focusPopup/popupToolButton/menu" command="activate" arguments="first menu item"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/topLevelWidget/1ctkCollapsibleButton0/focusComboBox/focusPopup/popupToolButton/menu" command="activate" arguments="second menu item"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/topLevelWidget/1ctkCollapsibleButton0/focusComboBox/focusPopup/popupToolButton/menu" command="activate" arguments="third menu item"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/topLevelWidget/1ctkCollapsibleButton0/focusComboBox/focusPopup/popupToolButton/menu" command="activate" arguments="fourth menu item"/>
+</events>

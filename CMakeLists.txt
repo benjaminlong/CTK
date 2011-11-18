@@ -240,6 +240,11 @@ IF(BUILD_TESTING)
 ENDIF()
 
 #-----------------------------------------------------------------------------
+# QtTesting
+#
+OPTION(CTK_USE_QTTESTING "Enable/Disable QtTesting" OFF)
+
+#-----------------------------------------------------------------------------
 # Coverage
 #
 OPTION(WITH_COVERAGE "Enable/Disable coverage" OFF)
@@ -692,8 +697,16 @@ FOREACH(app ${CTK_APPLICATIONS_SUBDIRS})
   ENDIF()
 ENDFOREACH()
 
+#-----------------------------------------------------------------------------
+IF(CTK_USE_QTTESTING)
+  ADD_SUBDIRECTORY(Libs/QtTesting)
+ENDIF()
+
 IF(BUILD_TESTING)
   ADD_SUBDIRECTORY(Applications/Testing)
+  IF(CTK_USE_QTTESTING)
+    ADD_SUBDIRECTORY(Applications/ctkQtTesting)
+  ENDIF()
 ENDIF(BUILD_TESTING)
 
 

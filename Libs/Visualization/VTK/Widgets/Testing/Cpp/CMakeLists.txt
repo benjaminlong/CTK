@@ -24,6 +24,9 @@ SET(TEST_SOURCES
   ctkVTKWidgetsUtilsTestGrabWidget.cpp
   )
 
+SET(TEST_MOC_SOURCES)
+SET(TEST_UI_FORMS)
+
 IF(CTK_USE_CHARTS)
   SET(TEST_SOURCES
       ctkVTKChartViewTest1.cpp
@@ -49,6 +52,33 @@ IF(EXISTS "${CTKData_DIR}")
     )
 ENDIF()
 
+#
+# Test expecting CTK_USE_QTTESTING to be ON
+#
+IF(CTK_USE_QTTESTING)
+  LIST(APPEND TEST_SOURCES
+#    ctkVTKAbstractMatrixWidgetEventTranslatorPlayerTest1.cpp
+    ctkVTKAbstractViewEventTranslatorPlayerTest1.cpp
+#    ctkVTKChartViewEventTranslatorPlayerTest1.cpp
+    ctkVTKDataSetArrayComboBoxEventTranslatorPlayerTest1.cpp
+    ctkVTKDataSetModelEventTranslatorPlayerTest1.cpp
+    ctkVTKMagnifyViewEventTranslatorPlayerTest1.cpp
+    ctkVTKMatrixWidgetEventTranslatorPlayerTest1.cpp
+    ctkVTKRenderViewEventTranslatorPlayerTest1.cpp
+    ctkVTKScalarBarWidgetEventTranslatorPlayerTest1.cpp
+#    ctkVTKScalarsToColorsUtilsEventTranslatorPlayerTest1.cpp
+#    ctkVTKScalarsToColorsViewEventTranslatorPlayerTest1.cpp
+#    ctkVTKScalarsToColorsWidgetEventTranslatorPlayerTest1.cpp
+    ctkVTKSliceViewEventTranslatorPlayerTest1.cpp
+#    ctkVTKSurfaceMaterialPropertyWidgetEventTranslatorPlayerTest1.cpp
+    ctkVTKTextPropertyWidgetEventTranslatorPlayerTest1.cpp
+#    ctkVTKThresholdWidgetEventTranslatorPlayerTest1.cpp
+#    ctkVTKThumbnailViewEventTranslatorPlayerTest1.cpp
+#    ctkVTKVolumePropertyWidgetEventTranslatorPlayerTest1.cpp
+#    ctkVTKWidgetsUtilsEventTranslatorPlayerTest1.cpp
+    )
+ENDIF()
+
 CREATE_TEST_SOURCELIST(Tests ${KIT}CppTests.cpp
   ${TEST_SOURCES}
   #EXTRA_INCLUDE TestingMacros.h
@@ -59,7 +89,42 @@ REMOVE (TestsToRun ${KIT}CppTests.cpp)
 
 SET(LIBRARY_NAME ${PROJECT_NAME})
 
-ADD_EXECUTABLE(${KIT}CppTests ${Tests})
+#
+# If CTK_USE_QTTESTING is ON
+#
+IF(CTK_USE_QTTESTING)
+  # Do not export symbol in ctkEventTranslatorPlayerWidget class
+  ADD_DEFINITIONS(-DNO_SYMBOL_EXPORT)
+
+  INCLUDE_DIRECTORIES(
+    ${CTK_SOURCE_DIR}/Libs/QtTesting
+    ${CTK_BINARY_DIR}/Libs/QtTesting
+    )
+
+  LIST(APPEND LIBRARY_NAME CTKQtTesting)
+
+  LIST(APPEND TEST_SOURCES
+    ${CTK_SOURCE_DIR}/Libs/QtTesting/ctkEventTranslatorPlayerWidget.h
+    ${CTK_SOURCE_DIR}/Libs/QtTesting/ctkEventTranslatorPlayerWidget.cpp
+    )
+  LIST(APPEND TEST_MOC_SOURCES
+    ${CTK_SOURCE_DIR}/Libs/QtTesting/ctkEventTranslatorPlayerWidget.h
+    )
+  LIST(APPEND TEST_UI_FORMS
+    ${CTK_SOURCE_DIR}/Libs/QtTesting/Resources/UI/ctkEventTranslatorPlayerWidget.ui
+    )
+ENDIF()
+
+SET(TEST_MOC_CPP)
+IF(TEST_MOC_SOURCES)
+  QT4_WRAP_CPP(TEST_MOC_CPP ${TEST_MOC_SOURCES})
+ENDIF()
+SET(TEST_UI_CPP)
+IF(TEST_UI_FORMS)
+  QT4_WRAP_UI(TEST_UI_CPP ${TEST_UI_FORMS})
+ENDIF()
+
+ADD_EXECUTABLE(${KIT}CppTests ${Tests} ${TEST_SOURCES} ${TEST_MOC_CPP} ${TEST_UI_CPP})
 TARGET_LINK_LIBRARIES(${KIT}CppTests ${LIBRARY_NAME} vtkCharts ${CTK_BASE_LIBRARIES})
 
 SET( KIT_TESTS ${CPP_TEST_PATH}/${KIT}CppTests)
@@ -141,3 +206,27 @@ IF(EXISTS "${CTKData_DIR}")
   SIMPLE_TEST( ctkVTKRenderViewTest2 )
 ENDIF()
 
+#
+# Add Tests expecting CTK_USE_QTTESTING to be set
+#
+IF(CTK_USE_QTTESTING)
+#    SIMPLE_TEST( ctkVTKAbstractMatrixWidgetEventTranslatorPlayerTest1 )
+    SIMPLE_TEST( ctkVTKAbstractViewEventTranslatorPlayerTest1 )
+#    SIMPLE_TEST( ctkVTKChartViewEventTranslatorPlayerTest1 )
+    SIMPLE_TEST( ctkVTKDataSetArrayComboBoxEventTranslatorPlayerTest1 )
+    SIMPLE_TEST( ctkVTKDataSetModelEventTranslatorPlayerTest1 )
+    SIMPLE_TEST( ctkVTKMagnifyViewEventTranslatorPlayerTest1 )
+    SIMPLE_TEST( ctkVTKMatrixWidgetEventTranslatorPlayerTest1 )
+    SIMPLE_TEST( ctkVTKRenderViewEventTranslatorPlayerTest1 )
+    SIMPLE_TEST( ctkVTKScalarBarWidgetEventTranslatorPlayerTest1 )
+#    SIMPLE_TEST( ctkVTKScalarsToColorsUtilsEventTranslatorPlayerTest1 )
+#    SIMPLE_TEST( ctkVTKScalarsToColorsViewEventTranslatorPlayerTest1 )
+#    SIMPLE_TEST( ctkVTKScalarsToColorsWidgetEventTranslatorPlayerTest1 )
+    SIMPLE_TEST( ctkVTKSliceViewEventTranslatorPlayerTest1 )
+#    SIMPLE_TEST( ctkVTKSurfaceMaterialPropertyWidgetEventTranslatorPlayerTest1 )
+    SIMPLE_TEST( ctkVTKTextPropertyWidgetEventTranslatorPlayerTest1 )
+#    SIMPLE_TEST( ctkVTKThresholdWidgetEventTranslatorPlayerTest1 )
+#    SIMPLE_TEST( ctkVTKThumbnailViewEventTranslatorPlayerTest1 )
+#    SIMPLE_TEST( ctkVTKVolumePropertyWidgetEventTranslatorPlayerTest1 )
+#    SIMPLE_TEST( ctkVTKWidgetsUtilsEventTranslatorPlayerTest1 )
+ENDIF()

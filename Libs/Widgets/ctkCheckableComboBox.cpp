@@ -163,16 +163,18 @@ void ctkCheckableComboBoxPrivate::updateCheckedList()
 QModelIndexList ctkCheckableComboBoxPrivate::checkedIndexes()const
 {
   Q_Q(const ctkCheckableComboBox);
+  QModelIndex startIndex = q->model()->index(0,0, q->rootModelIndex());
   return q->model()->match(
-    q->rootModelIndex().child(0,0), Qt::CheckStateRole, Qt::Checked, -1, Qt::MatchRecursive);
+    startIndex, Qt::CheckStateRole, Qt::Checked, -1, Qt::MatchRecursive);
 }
 
 //-----------------------------------------------------------------------------
 QModelIndexList ctkCheckableComboBoxPrivate::uncheckedIndexes()const
 {
   Q_Q(const ctkCheckableComboBox);
+  QModelIndex startIndex = q->model()->index(0,0, q->rootModelIndex());
   return q->model()->match(
-    q->rootModelIndex().child(0,0), Qt::CheckStateRole, Qt::Unchecked, -1, Qt::MatchRecursive);
+    startIndex, Qt::CheckStateRole, Qt::Unchecked, -1, Qt::MatchRecursive);
 }
 
 //-----------------------------------------------------------------------------

@@ -2,6 +2,7 @@
 #define __ctkConfig_h
 
 #define CTK_PLUGIN_DIR "@CTK_BINARY_DIR@/bin/plugins/"
+#define CTK_SOURCE_DIR "@CTK_SOURCE_DIR@"
 
 #endif
 

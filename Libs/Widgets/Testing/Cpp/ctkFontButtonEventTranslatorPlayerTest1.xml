@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<events>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0" command="activate" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView0" command="mousePress" arguments="1,1,0,34,7,/38:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView0" command="mouseRelease" arguments="1,0,0,34,7,/38:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView1" command="mousePress" arguments="1,1,0,28,6,/1:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView1" command="mouseRelease" arguments="1,0,0,28,6,/1:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView1" command="mousePress" arguments="1,1,0,23,10,/2:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView1" command="mouseRelease" arguments="1,0,0,23,10,/2:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2/qt_scrollarea_vcontainer/1QScrollBar0" command="mousePress" arguments="1,1,0,8,29"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseMove" arguments="1,0,0,9,62"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseRelease" arguments="1,0,0,9,62"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2" command="mousePress" arguments="1,1,0,20,10,/11:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2" command="mouseRelease" arguments="1,0,0,20,10,/11:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2" command="mousePress" arguments="1,1,0,20,7,/8:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2" command="mouseRelease" arguments="1,0,0,20,7,/8:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QGroupBox0/1QCheckBox0" command="set_boolean" arguments="true"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QGroupBox0/1QCheckBox1" command="set_boolean" arguments="true"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView0/qt_scrollarea_vcontainer/1QScrollBar0" command="mousePress" arguments="1,1,0,7,67"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView0/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseMove" arguments="1,0,0,12,49"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView0/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseRelease" arguments="1,0,0,12,49"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView0" command="mousePress" arguments="1,1,0,73,12,/18:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView0" command="mouseRelease" arguments="1,0,0,73,12,/18:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView1" command="mousePress" arguments="1,1,0,19,7,/1:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView1" command="mouseMove" arguments="1,0,0,20,7,/1:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView1" command="mouseRelease" arguments="1,0,0,20,7,/1:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2/qt_scrollarea_vcontainer/1QScrollBar0" command="mousePress" arguments="1,1,0,9,67"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseMove" arguments="1,0,0,8,84"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseRelease" arguments="1,0,0,8,84"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2" command="mousePress" arguments="1,1,0,18,8,/15:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QFontListView2" command="mouseRelease" arguments="1,0,0,18,8,/15:0"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/1ctkFontButton0/1QFontDialog0/1QDialogButtonBox0/1QPushButton0" command="activate" arguments=""/>
+</events>

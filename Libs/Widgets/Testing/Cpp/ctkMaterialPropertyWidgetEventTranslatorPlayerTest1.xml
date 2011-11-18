@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<events>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/ColorPickerButton" command="set_boolean" arguments="true"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/ColorPickerButton/1ctkColorDialog0/1QTabWidget0/qt_tabwidget_stackedwidget/1QWidget0/1QWellArray0" command="mousePress" arguments="1,1,0,13,55"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/ColorPickerButton/1ctkColorDialog0/1QTabWidget0/qt_tabwidget_stackedwidget/1QWidget0/1QWellArray0" command="mouseRelease" arguments="1,0,0,13,55"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/ColorPickerButton/1ctkColorDialog0/1QDialogButtonBox0/1QPushButton0" command="activate" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel0" command="mousePress" arguments="1,1,0,15,15"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel0" command="mouseRelease" arguments="1,0,0,15,15"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel1" command="mousePress" arguments="1,1,0,14,16"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel1" command="mouseRelease" arguments="1,0,0,14,16"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel2" command="mousePress" arguments="1,1,0,14,17"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel2" command="mouseRelease" arguments="1,0,0,14,17"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel3" command="mousePress" arguments="1,1,0,10,17"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel3" command="mouseRelease" arguments="1,0,0,10,17"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/ColorPickerButton" command="set_boolean" arguments="true"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/ColorPickerButton/1ctkColorDialog0/1QTabWidget0/qt_tabwidget_stackedwidget/1QWidget0/1QWellArray0" command="mousePress" arguments="1,1,0,184,69"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/ColorPickerButton/1ctkColorDialog0/1QTabWidget0/qt_tabwidget_stackedwidget/1QWidget0/1QWellArray0" command="mouseRelease" arguments="1,0,0,184,69"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/ColorPickerButton/1ctkColorDialog0/1QDialogButtonBox0/1QPushButton0" command="activate" arguments=""/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel0" command="mousePress" arguments="1,1,0,13,16"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel0" command="mouseRelease" arguments="1,0,0,13,16"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel1" command="mousePress" arguments="1,1,0,10,19"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel1" command="mouseRelease" arguments="1,0,0,10,19"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel2" command="mousePress" arguments="1,1,0,15,19"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel2" command="mouseRelease" arguments="1,0,0,15,19"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel3" command="mousePress" arguments="1,1,0,14,21"/>
+    <event widget="ctkEventTranslatorPlayerWidget/centralwidget/stackedWidget/MaterialProperty1/PresetsListWidget/qt_scrollarea_viewport/1ctkMaterialPropertyPreviewLabel3" command="mouseRelease" arguments="1,0,0,14,21"/>
+</events>

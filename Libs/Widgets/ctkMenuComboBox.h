@@ -30,6 +30,9 @@
 #include "ctkWidgetsExport.h"
 
 class ctkMenuComboBoxPrivate;
+class QComboBox;
+class QToolButton;
+class ctkCompleter;
 
 /// QComboBox linked with a QMenu. See ctkMenuComboBox::setMenu()
 /// ctkMenuComboBox can be editable, disable,
@@ -96,6 +99,15 @@ public:
   /// See QComboBox::setMinimumContentsLength()
   void setMinimumContentsLength(int characters);
 
+  /// Return the QComboBox* internal
+  QComboBox* menuComboBoxInternal() const;
+
+  /// Return the QToolButton* internal
+  QToolButton* toolButtonInternal() const;
+
+  /// Return the QCompleter* internal
+  ctkCompleter* searchCompleter() const;
+
 protected:
   virtual bool eventFilter(QObject* target, QEvent* event);
   virtual void resizeEvent(QResizeEvent *event);
@@ -105,6 +117,7 @@ public slots:
 
 signals:
   void actionChanged(QAction* action);
+  void popupShown();
 
 protected slots:
   /// Change the current text/icon on the QComboBox

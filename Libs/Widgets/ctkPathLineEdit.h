@@ -52,6 +52,7 @@ MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 // CTK includes
 #include "ctkWidgetsExport.h"
 class ctkPathLineEditPrivate;
+class QComboBox;
 
 /** /class Advanced line edit to select file or directory
  *  /brief Widget that remember previous selection (using QSettings and objectName)
@@ -155,6 +156,9 @@ public:
    *  If there is no extension yet, set it
   */
   void setCurrentFileExtension(const QString& extension);
+
+  /// Return the QComboBox*
+  QComboBox* comboBox() const;
 
 signals:
   /** the signal is emit when the state of hasValidInput changed
