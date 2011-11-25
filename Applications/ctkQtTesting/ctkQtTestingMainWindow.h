@@ -1,13 +1,13 @@
 #ifndef CTKQTTESTINGMAINWINDOW_H
 #define CTKQTTESTINGMAINWINDOW_H
 
-#include <QWidget>
+#include <QMainWindow>
 #include <ctkQtTestingUtility.h>
 #include "ui_ctkQtTestingMainWindow.h"
 
 //class pqTestUtility;
 
-class ctkQtTestingMainWindow : public QWidget
+class ctkQtTestingMainWindow : public QMainWindow
 {
   Q_OBJECT
 public:

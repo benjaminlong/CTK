@@ -12,137 +12,26 @@
 #include "pqEventObserver.h"
 #include "pqEventSource.h"
 
+// VTK includes
+#include <vtkActor.h>
+#include <vtkCubeSource.h>
+#include <vtkLineSource.h>
+#include <vtkPlaneWidget.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkProperty.h>
+#include <vtkRenderer.h>
+#include <vtkSmartPointer.h>
+#include <vtkSphereSource.h>
+
+#include <vtkRenderWindow.h>
+#include <vtkRenderWindowInteractor.h>
+#include <vtkSplineWidget2.h>
+#include <vtkBoxWidget.h>
+
 // CTK includes
-#include <ctkQtTestingMainWindow.h>
-
-
-class XMLEventObserver : public pqEventObserver
-{
-  QXmlStreamWriter* XMLStream;
-  QString XMLString;
-
-public:
-  XMLEventObserver(QObject* p) : pqEventObserver(p)
-  {
-  this->XMLStream = NULL;
-  }
-
-  ~XMLEventObserver()
-    {
-    delete this->XMLStream;
-    }
-
-protected:
-  virtual void setStream(QTextStream* stream)
-    {
-    if (this->XMLStream)
-      {
-      this->XMLStream->writeEndElement();
-      this->XMLStream->writeEndDocument();
-      delete this->XMLStream;
-      this->XMLStream = NULL;
-      }
-    if (this->Stream)
-      {
-      *this->Stream << this->XMLString;
-      }
-    this->XMLString = QString();
-    pqEventObserver::setStream(stream);
-    if (this->Stream)
-      {
-      this->XMLStream = new QXmlStreamWriter(&this->XMLString);
-      this->XMLStream->setAutoFormatting(true);
-      this->XMLStream->writeStartDocument();
-      this->XMLStream->writeStartElement("events");
-      }
-    }
-
-  virtual void onRecordEvent(const QString& widget, const QString& command,
-    const QString& arguments)
-    {
-    if(this->XMLStream)
-      {
-      this->XMLStream->writeStartElement("event");
-      this->XMLStream->writeAttribute("widget", widget);
-      this->XMLStream->writeAttribute("command", command);
-      this->XMLStream->writeAttribute("arguments", arguments);
-      this->XMLStream->writeEndElement();
-      }
-    }
-};
-
-class XMLEventSource : public pqEventSource
-{
-  typedef pqEventSource Superclass;
-  QXmlStreamReader *XMLStream;
-
-public:
-  XMLEventSource(QObject* p): Superclass(p) { this->XMLStream = NULL;}
-  ~XMLEventSource() { delete this->XMLStream; }
-
-protected:
-  virtual void setContent(const QString& xmlfilename)
-    {
-    delete this->XMLStream;
-    this->XMLStream = NULL;
-
-    QFile xml(xmlfilename);
-    if (!xml.open(QIODevice::ReadOnly))
-      {
-      qDebug() << "Failed to load " << xmlfilename;
-      return;
-      }
-    QByteArray data = xml.readAll();
-    this->XMLStream = new QXmlStreamReader(data);
-    /* This checked for valid event objects, but also caused the first event
-     * to get dropped. Commenting this out in the example. If you wish to report
-     * empty XML test files a flag indicating whether valid events were found is
-     * probably the best way to go.
-    while (!this->XMLStream->atEnd())
-      {
-      QXmlStreamReader::TokenType token = this->XMLStream->readNext();
-      if (token == QXmlStreamReader::StartElement)
-        {
-        if (this->XMLStream->name() == "event")
-          {
-          break;
-          }
-        }
-      } */
-    if (this->XMLStream->atEnd())
-      {
-      qDebug() << "Invalid xml" << endl;
-      }
-    }
-
-  int getNextEvent(QString& widget, QString& command, QString&
-    arguments)
-    {
-    if (this->XMLStream->atEnd())
-      {
-      return DONE;
-      }
-    while (!this->XMLStream->atEnd())
-      {
-      QXmlStreamReader::TokenType token = this->XMLStream->readNext();
-      if (token == QXmlStreamReader::StartElement)
-        {
-        if (this->XMLStream->name() == "event")
-          {
-          break;
-          }
-        }
-      }
-    if (this->XMLStream->atEnd())
-      {
-      return DONE;
-      }
-    widget = this->XMLStream->attributes().value("widget").toString();
-    command = this->XMLStream->attributes().value("command").toString();
-    arguments = this->XMLStream->attributes().value("arguments").toString();
-    return SUCCESS;
-    }
-};
+#include "ctkQtTestingMainWindow.h"
+#include "ctkXMLEventObserver.h"
+#include "ctkXMLEventSource.h"
 
 
 //-----------------------------------------------------------------------------
@@ -154,8 +43,42 @@ ctkQtTestingMainWindow::ctkQtTestingMainWindow()
   QObject::connect(Ui.PlayBackButton, SIGNAL(clicked(bool)), this, SLOT(play()));
 
   this->TestUtility = new ctkQtTestingUtility(this);
-  this->TestUtility->addEventObserver("xml", new XMLEventObserver(this));
-  this->TestUtility->addEventSource("xml", new XMLEventSource(this));
+  this->TestUtility->addEventObserver("xml", new ctkXMLEventObserver(this));
+  this->TestUtility->addEventSource("xml", new ctkXMLEventSource(this));
+
+  Ui.renderView->setBackgroundColor(QColor(Qt::gray));
+  Ui.renderView->setBackgroundColor2(QColor(Qt::darkBlue));
+  Ui.renderView->setGradientBackground(true);
+  Ui.renderView->setCornerAnnotationText("ctk Qt test");
+  Ui.renderView->show();
+
+  // Create a cube.
+  vtkSmartPointer<vtkCubeSource> cubeSource =
+    vtkSmartPointer<vtkCubeSource>::New();
+
+  // Create a mapper and actor.
+  vtkSmartPointer<vtkPolyDataMapper> mapper =
+    vtkSmartPointer<vtkPolyDataMapper>::New();
+  mapper->SetInputConnection(cubeSource->GetOutputPort());
+
+  vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
+  actor->SetMapper(mapper);
+
+  // Add the actors to the scene
+  Ui.renderView->renderer()->AddActor(actor);
+
+//  vtkSmartPointer<vtkBoxWidget> boxWidget =
+//    vtkSmartPointer<vtkBoxWidget>::New();
+//  boxWidget->SetInteractor(Ui.renderView->interactor());
+//  boxWidget->SetPlaceFactor(1.0);
+//  boxWidget->PlaceWidget();
+//  boxWidget->On();
+
+  // Render and interact
+//  Ui.renderView->renderWindow()->Render();
+//  Ui.renderView->interactor()->Start();
+
+  Ui.renderView->resetCamera();
 }
 
 //-----------------------------------------------------------------------------
@@ -170,7 +93,7 @@ ctkQtTestingMainWindow::~ctkQtTestingMainWindow()
 //-----------------------------------------------------------------------------
 void ctkQtTestingMainWindow::record()
 {
-  qDebug() << "start Record";
+  qDebug() << "Start Record";
   QString filename = QFileDialog::getSaveFileName (this, "Test File Name",
     QString(), "XML Files (*.xml)");
   if (!filename.isEmpty())
@@ -182,7 +105,7 @@ void ctkQtTestingMainWindow::record()
 //-----------------------------------------------------------------------------
 void ctkQtTestingMainWindow::play()
 {
-  qDebug() << "Playback";
+  qDebug() << "Start Playback";
   QString filename = QFileDialog::getOpenFileName (this, "Test File Name",
     QString(), "XML Files (*.xml)");
   if (!filename.isEmpty())
