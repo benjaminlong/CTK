@@ -53,8 +53,6 @@ bool ctkVTKRenderViewEventTranslator::translateEvent(QObject *Object,
                                                      bool &Error)
 {
 
-//  qDebug() << "Event : " << Event->type();
-
   Q_UNUSED(Error);
   QWidget* widget = qobject_cast<QWidget*>(Object);
 
@@ -62,8 +60,6 @@ bool ctkVTKRenderViewEventTranslator::translateEvent(QObject *Object,
     {
     return false;
     }
-
-//  qDebug() << "Event : " << Event->type();
 
   bool handled = false;
   switch(Event->type())
