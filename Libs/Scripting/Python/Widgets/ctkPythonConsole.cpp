@@ -417,6 +417,7 @@ void ctkPythonConsole::setPs2(const QString& newPs2)
 void ctkPythonConsole::executeCommand(const QString& command)
 {
   Q_D(ctkPythonConsole);
+  qDebug() << "python exec command";
   d->MultilineStatement = d->push(command);
 }
 
